@@ -1,0 +1,376 @@
+:root {
+    --dark-color: #bebab1;
+    --green-color: #DDDDDD;
+    --red-color: #851D33;
+    --yellow-color: #EDECE8;
+    --section-color: #ffffff;
+    --grey-color: #A9A9A9;
+}
+
+body {
+    /* font-family:'Lustria'; */
+}
+
+.main-btn {
+    background-color: var(--red-color);
+    color: var(--yellow-color);
+    padding: 0.5rem 1rem;
+}
+
+.main-btn:hover {
+    color: var(--yellow-color);
+}
+
+.main-title::after {
+    content: "";
+    width: 120px;
+    height: 2px;
+    background-color: var(--green-color);
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Start Navbar */
+.navbar {
+    background-color: var(--dark-color);
+    background-color: #c8c3b9c7;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+    color: var(--red-color);
+}
+
+.navbar .navbar-toggler {
+    color: white;
+    font-size: 25px;
+    border-color: white;
+}
+
+.navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar .navbar-toggler[aria-expanded="true"] {
+    border-color: var(--green-color);
+}
+
+/* End Navbar */
+/* Start Landing */
+.roro {
+    padding-left: 200px;
+}
+
+.rofaida {
+    background-image: url("../imgs/landing-image.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.landing {
+    color: #898686;
+    background-color: var(--yellow-color);
+    min-height: calc(100vh - 72px);
+}
+
+/* End Landing */
+
+
+
+
+.containerr {
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown {
+
+    position: relative;
+}
+
+.dropdown .dropdown-toggle {
+    background-color: var(--section-color);
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    color: var(--grey-color);
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: grey;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    z-index: 1;
+}
+
+.dropdown .dropdown-item {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.dropdown .dropdown-item:hover {
+    background-color: lightgrey;
+}
+
+.dropdown.open .dropdown-toggle {
+    background-color: lightgrey;
+}
+
+.dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+}
+
+.dropdown.open .dropdown-item {
+    transform: translateY(0);
+}
+
+.dropdown.open .dropdown-item:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.dropdown.open .dropdown-item:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.dropdown.open .dropdown-item:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+
+
+
+
+
+
+/* Start Features */
+.card {
+    margin-top: 50px;
+    width: 350px;
+    height: 200px;
+    background-color: var(--yellow-color);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    animation: moveCard 4s infinite ease-in-out alternate;
+    color: #6e6e6e;
+    border-color: white;
+}
+
+.card .icon {
+    color: #5e5e5e;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@keyframes moveCard {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.card:hover {
+    animation-play-state: paused;
+}
+
+.card-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.features .icon-holder {
+    height: 200px;
+}
+
+.features .icon-holder svg {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.features .icon-holder .number {
+    font-size: 12rem;
+    color: var(--section-color);
+}
+
+.features .icon-holder .icon {
+    color: var(--green-color);
+}
+
+.features .feat h4 {
+    color: var(--yellow-color);
+}
+
+/* End Features */
+/* Start Our Work */
+.our-work {
+    background-color: var(--section-color);
+}
+
+.our-work ul .active {
+    background-color: var(--red-color);
+    color: var(--yellow-color);
+}
+
+.our-work ul li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.our-work ul li:not(.active):hover {
+    color: var(--red-color);
+}
+
+.our-work .box {
+    padding: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.our-work .box::before {
+    content: attr(data-work);
+    position: absolute;
+    background-color: rgba(205, 208, 208, 0.76);
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    transition: 0.3s;
+    font-size: 1.5rem;
+    transform: translateX(calc(-100% - 5px));
+}
+
+.our-work .box:hover::before {
+    transform: translateX(0);
+}
+
+/* End Our Work */
+/* Start Stuff */
+.stuff .description {
+    max-width: 500px;
+}
+
+/* End Stuff */
+/* Start Team */
+.team {
+    background-color: var(--section-color);
+}
+
+.team h2 {
+    color: var(--grey-color);
+}
+
+.team .box h4 {
+    background-color: var(--green-color);
+}
+
+/* End Team */
+/* Start Project */
+.project {
+    background-color: var(--dark-color);
+}
+
+/* End Project */
+/* Start Subscribe */
+.subscribe {
+    background-color: var(--yellow-color);
+}
+
+.subscribe input[type="text"] {
+    border: none;
+    border-bottom: 1px solid white;
+}
+
+.subscribe input[type="text"]:focus {
+    outline: none;
+}
+
+.subscribe ::placeholder {
+    color: white;
+}
+
+.subscribe input[type="submit"] {
+    background-color: var(--dark-color);
+    color: var(--yellow-color);
+}
+
+/* End Subscribe */
+/* Start Footer */
+.footer {
+    background-color: var(--dark-color);
+}
+
+.footer .copyright>span {
+    color: var(--green-color);
+}
+
+.footer .copyright div span {
+    color: var(--yellow-color);
+}
+
+.footer .contact ul svg {
+    width: 20px;
+    height: 20px;
+}
+
+.footer .facebook {
+    background-color: #1877f2;
+}
+
+.footer .twitter {
+    background-color: #1da1f2;
+}
+
+.footer .linkedin {
+    background-color: #0077b5;
+}
+
+.footer .youtube {
+    background-color: #ff0000;
+}
+
+
+
+#mybutton .main-btn {
+    padding-top: 10px;
+    margin-top: 90px;
+    width: 350px;
+    margin-bottom: 0;
+}
+
+/* End Footer */
